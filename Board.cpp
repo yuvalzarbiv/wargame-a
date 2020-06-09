@@ -33,6 +33,8 @@ Soldier* Board::operator[](std::pair<int,int> location) const
     //      must be handled by polymorphism.
 void Board::move(uint player_number, std::pair<int,int> source, MoveDIR direction)
  {
+     
+
     
 
  }

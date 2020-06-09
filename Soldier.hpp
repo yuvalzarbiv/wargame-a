@@ -1,8 +1,8 @@
 #pragma once
+#include <vector>
 
 
 using namespace std;
-
 
 class Soldier
 {
@@ -11,6 +11,7 @@ class Soldier
     int health;
     int affect_per_activity;
     int playerID;
+    int full_health;
 
     public:
 
@@ -19,8 +20,8 @@ class Soldier
 
     //////////////// METHODS /////////////////////////
 
-    virtual void attack(Soldier& s){}
-    virtual void heal(){}
+    virtual void attack(vector<vector<Soldier*>> &board, pair<int,int> location){}
+    //virtual void heal(){}
 
     /////////////////////////////////////////////////
 

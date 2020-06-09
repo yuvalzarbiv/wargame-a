@@ -15,11 +15,12 @@ public:
     {
         this->health = 100;
         this->affect_per_activity = 50;
+        this->full_health = 100;
     }
     ~Sniper();
 
-    void attack(Soldier& s){}
-    void heal(){}
+    void attack(vector<vector<Soldier*>> &board, pair<int,int> dest){}
+    
 };
 
 

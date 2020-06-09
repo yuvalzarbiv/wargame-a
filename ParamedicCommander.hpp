@@ -12,11 +12,12 @@ public:
     {
         this->health = 120;
         this->affect_per_activity = __INT_MAX__;
+        this->full_health = 120;
     }
     ~ParamedicCommander();
 
-    void attack(Soldier& s){}
-    void heal(){}
+    void attack(vector<vector<Soldier*>> &board, pair<int,int> dest){}
+    
 
 
 
