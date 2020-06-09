@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-
+#include <math.h>
 
 using namespace std;
 
@@ -28,6 +28,8 @@ class Soldier
     int get_playerID() const { return playerID;}
     int get_affect_per_activity() const { return affect_per_activity;}
     int get_health() const { return health;}
+    int cure() const { return full_health;}
+    void set_health(int life){this->health = life;}
   
 };
 

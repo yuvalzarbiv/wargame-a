@@ -20,6 +20,7 @@ public:
     ~Sniper();
 
     void attack(vector<vector<Soldier*>> &board, pair<int,int> dest){}
+    pair<int,int> strongest_enemy (vector<vector<Soldier*>> board,  pair<int,int> soldier_location) const{}
     
 };
 
