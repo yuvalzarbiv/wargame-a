@@ -1,15 +1,14 @@
-//#pragma once
+#pragma once
 
-using namespace std;
+//using namespace std;
 #include "Soldier.hpp"
 
 
 class Paramedic: public Soldier
 {
-private:
 
 
-public:
+    public:
     Paramedic(int player):Soldier(player)
     {
         this->health = 100;
@@ -18,11 +17,8 @@ public:
     }
     ~Paramedic();
 
-    void attack(vector<vector<Soldier*>> &board, pair<int,int> dest){}
-    
-
-
-
+    void attack(vector<vector<Soldier*>> &board, pair<int,int> dest);
+        
 
 
 };

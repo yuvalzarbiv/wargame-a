@@ -1,7 +1,5 @@
-//#pragma once
-
-
-using namespace std;
+#pragma once
+//using namespace std;
 #include "Soldier.hpp"
 
 
@@ -20,9 +18,9 @@ public:
     }
     ~FootSoldier();
 
-    void attack(vector<vector<Soldier*>> &board, pair<int,int> location){}
+    void attack(vector<vector<Soldier*>> &board, pair<int,int> location);
 
-    pair<int,int> closest_enemy (vector<vector<Soldier*>> board,  pair<int,int> soldier_location) const{}
+    pair<int,int> closest_enemy (vector<vector<Soldier*>> board,  pair<int,int> soldier_location) const;
 
 
 

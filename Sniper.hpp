@@ -1,7 +1,6 @@
-//#pragma once
+#pragma once
 
-
-using namespace std;
+//using namespace std;
 #include "Soldier.hpp"
 
 
@@ -19,8 +18,8 @@ public:
     }
     ~Sniper();
 
-    void attack(vector<vector<Soldier*>> &board, pair<int,int> dest){}
-    pair<int,int> strongest_enemy (vector<vector<Soldier*>> board,  pair<int,int> soldier_location) const{}
+    void attack(vector<vector<Soldier*>> &board, pair<int,int> dest);
+    pair<int,int> strongest_enemy (vector<vector<Soldier*>> board,  pair<int,int> soldier_location) const;
     
 };
 

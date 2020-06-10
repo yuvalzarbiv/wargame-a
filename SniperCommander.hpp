@@ -1,4 +1,4 @@
-using namespace std;
+//using namespace std;
 #include "Sniper.hpp"
 
 
@@ -16,9 +16,8 @@ public:
     }
     ~SniperCommander();
 
-    void attack(vector<vector<Soldier*>> &board, pair<int,int> dest){}
+    void attack(vector<vector<Soldier*>> &board, pair<int,int> dest);
    
-
 
 
 

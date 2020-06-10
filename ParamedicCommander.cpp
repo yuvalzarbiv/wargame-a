@@ -1,5 +1,6 @@
 #include "ParamedicCommander.hpp"
 
+
 void ParamedicCommander::attack(vector<vector<Soldier *>> &board, pair<int, int> location)
 {
     int pID = board[location.first][location.second]->get_playerID();

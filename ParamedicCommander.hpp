@@ -1,7 +1,7 @@
-using namespace std;
+
 #include "Paramedic.hpp"
-
-
+#include <iostream>
+//using namespace std;
 class ParamedicCommander: public Paramedic
 {
 private:
@@ -16,7 +16,7 @@ public:
     }
     ~ParamedicCommander();
 
-    void attack(vector<vector<Soldier*>> &board, pair<int,int> dest){}
+    void attack(vector<vector<Soldier*>> &board, pair<int,int> dest);
     
 
 

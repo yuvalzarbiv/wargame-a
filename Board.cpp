@@ -33,9 +33,40 @@ Soldier* Board::operator[](std::pair<int,int> location) const
     //      must be handled by polymorphism.
 void Board::move(uint player_number, std::pair<int,int> source, MoveDIR direction)
  {
-     
+        int r = source.first;
+        int c = source.second;
+        if(r >= board.size() || r < 0 || c >= board[0].size() || c < 0) throw invalid_argument("ERROR:Out of the board");
+        Soldier* player = board[r][c];
+        if(player == nullptr || player->get_playerID() != player_number) throw("ERROR: illegal move"); 
+        
+        switch (direction)
+        {
+        case Up:
+            r++;
+            break;
+        
+        case Down:
+            r--;
+            break;
 
-    
+        case Left:
+            c--;
+            break;
+
+        case Right:
+            c++;
+            break;  
+
+        default:
+            throw("Error");
+            break;
+        }
+        
+        if (r >= board.size() || r < 0 || c >= board[0].size() || c < 0) throw invalid_argument("ERROR:Out of the board");
+        if(board[r][c] != nullptr)  throw invalid_argument("ERROR: another soldier stand here");
+        board[source.first][source.second] = nullptr;
+        board[r][c] = player;
+        player->attack(board,{r,c});
 
  }
 

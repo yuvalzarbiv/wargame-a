@@ -1,4 +1,4 @@
-//#pragma once
+#pragma once
 #include <vector>
 #include <math.h>
 
@@ -20,7 +20,7 @@ class Soldier
 
     //////////////// METHODS /////////////////////////
 
-    virtual void attack(vector<vector<Soldier*>> &board, pair<int,int> location){}
+    virtual void attack(vector<vector<Soldier*>> &board, pair<int,int> location){};
     //virtual void heal(){}
 
     /////////////////////////////////////////////////
