@@ -17,9 +17,6 @@ public:
     ~FootCommander();
 
     void attack(vector<vector<Soldier*>> &board, pair<int,int> dest);
-    
-
-
 
 
 

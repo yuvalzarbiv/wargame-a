@@ -77,7 +77,13 @@ bool Board::has_soldiers(uint player_number) const
      {
         for (int j = 0; j < board[i].size(); j++)
         {
-            if (board[i][j] != nullptr && board[i][j]-> get_playerID() == player_number) return true;
+            if (board[i][j] != nullptr && board[i][j]-> get_playerID() == player_number) 
+            {
+                // cout << "on pair: " << i << "," << j << endl;
+                // cout << "this is: " << board[i][j]->get_affect_per_activity() << endl;
+                // cout << "his health: " << board[i][j]->get_health() << endl;
+                return true;
+            }
         }
      }
      return false;

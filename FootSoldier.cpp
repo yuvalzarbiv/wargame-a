@@ -9,8 +9,8 @@ pair<int,int> FootSoldier::closest_enemy (vector<vector<Soldier*>> board,  pair<
 {
     int pID = board[soldier_location.first][soldier_location.second]->get_playerID();
     pair <int,int> enemy = {-1,-1};
-    double mindist = sqrt(pow(soldier_location.first,2) + pow(soldier_location.second,2));
-    double dist;
+    double mindist = board.size() + board[0].size(); //sqrt(pow(soldier_location.first,2) + pow(soldier_location.second,2));
+    double dist = board.size() + board[0].size();
 
     for (int i = 0; i < board.size(); i++)
     {
@@ -37,7 +37,7 @@ void FootSoldier::attack(vector<vector<Soldier*>> &board, pair<int,int> location
 {
     pair<int,int> enemy = closest_enemy(board,location);
 
-    if (enemy.first >= 0 && enemy.second >= 0)
+    if (enemy.first != -1 && enemy.second != -1)
     {
         int soldierdemage = board[location.first][location.second]->get_affect_per_activity();
         int enemyNewH = board[enemy.first][enemy.second]->get_health()-soldierdemage;
