@@ -1,4 +1,4 @@
-#pragma once
+//#pragma once
 #include "FootSoldier.hpp"
 #include <iostream>
 
@@ -35,19 +35,19 @@ pair<int,int> FootSoldier::closest_enemy (vector<vector<Soldier*>> board,  pair<
 
 void FootSoldier::attack(vector<vector<Soldier*>> &board, pair<int,int> location)
 {
-        pair<int,int> enemy = closest_enemy(board,location);
+    pair<int,int> enemy = closest_enemy(board,location);
 
-        if (enemy.first >= 0 && enemy.second >= 0)
+    if (enemy.first >= 0 && enemy.second >= 0)
+    {
+        int soldierdemage = board[location.first][location.second]->get_affect_per_activity();
+        int enemyNewH = board[enemy.first][enemy.second]->get_health()-soldierdemage;
+        if (enemyNewH <= 0)
         {
-            int soldierdemage = board[location.first][location.second]->get_affect_per_activity();
-            int enemyNewH = board[enemy.first][enemy.second]->get_health()-soldierdemage;
-            if (enemyNewH <= 0)
-            {
-                board[enemy.first][enemy.second] = nullptr;
-            }
-            else board[enemy.first][enemy.second]->set_health(enemyNewH);
-            
+            board[enemy.first][enemy.second] = nullptr;
         }
+        else board[enemy.first][enemy.second]->set_health(enemyNewH);
+        
+    }
 
 }
    

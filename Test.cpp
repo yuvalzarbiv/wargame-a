@@ -1,42 +1,61 @@
-#include <string>
-#include <iostream>
-#include "doctest.h"
-#include "Board.hpp"
-#include "FootCommander.hpp"
-#include "SniperCommander.hpp"
-#include "ParamedicCommander.hpp"
+// #include <string>
+// #include <iostream>
+// #include "doctest.h"
+// #include "Board.hpp"
+// #include "FootCommander.hpp"
+// #include "SniperCommander.hpp"
+// #include "ParamedicCommander.hpp"
 
-using namespace std;
-using namespace WarGame;
+// using namespace std;
+// using namespace WarGame;
+
+
+	 //
+	// Created by amichai hadad on 28/04/2020.
+	//
+	#include "doctest.h"
+	#include <iostream>
+	#include <stdexcept>
+
+	#include "DemoGame.hpp"
+	#include "FootSoldier.hpp"
+	#include "FootCommander.hpp"
+	#include "Sniper.hpp"
+	#include "SniperCommander.hpp"
+	#include "Paramedic.hpp"
+	#include "ParamedicCommander.hpp"
+	#include <cassert>
+
+	using namespace WarGame;
 
 
 
-TEST_CASE("Foot soldiers") 
-{
+// TEST_CASE("Foot soldiers") 
+// {
 
-     Board board(8,8);
+//      Board board(8,8);
     
 
-    CHECK(!board.has_soldiers(1));
-    board[{0,0}] = new FootSoldier(1);
-    CHECK(board.has_soldiers(1));
-    CHECK(!board.has_soldiers(2));
-    board[{7,0}] = new FootSoldier(2);
-    CHECK(board.has_soldiers(2));
+//     CHECK(!board.has_soldiers(1));
+//     board[{0,0}] = new FootSoldier(1);
+//     CHECK(board.has_soldiers(1));
+//     CHECK(!board.has_soldiers(2));
+//     board[{7,0}] = new FootSoldier(2);
+//     CHECK(board.has_soldiers(2));
 
-    board.move(1, {0,0}, Board::MoveDIR::Up);  // move to {1,0} and shoot; damage 10
-    board.move(1, {1,0}, Board::MoveDIR::Down);  // move back to {0,0} and shoot; damage 10 
-    board.move(1, {0,0}, Board::MoveDIR::Up);  // move to {1,0} and shoot; damage 10
-    board.move(1, {1,0}, Board::MoveDIR::Down);  // move back to {0,0} and shoot; damage 10 
-    board.move(1, {0,0}, Board::MoveDIR::Up);  // move to {1,0} and shoot; damage 10
-    board.move(1, {1,0}, Board::MoveDIR::Down);  // move back to {0,0} and shoot; damage 10 
-    board.move(1, {0,0}, Board::MoveDIR::Up);  // move to {1,0} and shoot; damage 10
-    board.move(1, {1,0}, Board::MoveDIR::Down);  // move back to {0,0} and shoot; damage 10 
-    board.move(1, {0,0}, Board::MoveDIR::Up);  // move to {1,0} and shoot; damage 10
-    board.move(1, {1,0}, Board::MoveDIR::Down);  // move back to {0,0} and shoot; damage 10 
-    CHECK(!board.has_soldiers(2));
+//     board.move(1, {0,0}, Board::MoveDIR::Up);  // move to {1,0} and shoot; damage 10
+//     board.move(1, {1,0}, Board::MoveDIR::Down);  // move back to {0,0} and shoot; damage 10 
+//     board.move(1, {0,0}, Board::MoveDIR::Up);  // move to {1,0} and shoot; damage 10
+//     board.move(1, {1,0}, Board::MoveDIR::Down);  // move back to {0,0} and shoot; damage 10 
+//     board.move(1, {0,0}, Board::MoveDIR::Up);  // move to {1,0} and shoot; damage 10
+//     board.move(1, {1,0}, Board::MoveDIR::Down);  // move back to {0,0} and shoot; damage 10 
+//     board.move(1, {0,0}, Board::MoveDIR::Up);  // move to {1,0} and shoot; damage 10
+//     board.move(1, {1,0}, Board::MoveDIR::Down);  // move back to {0,0} and shoot; damage 10 
+//     board.move(1, {0,0}, Board::MoveDIR::Up);  // move to {1,0} and shoot; damage 10
+//     board.move(1, {1,0}, Board::MoveDIR::Down);  // move back to {0,0} and shoot; damage 10 
+//     CHECK(!board.has_soldiers(2));
    
-}
+// }
 
 TEST_CASE("Snipers And Paramedics")
  {
